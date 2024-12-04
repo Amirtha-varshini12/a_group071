@@ -1,5 +1,5 @@
 # Load the Data
-data <- read.csv("C:\\Users\\Amirtha\\Documents\\Team research and devep\\Weather.csv", header = TRUE, sep = ",")
+data <- read.csv("Weather.csv", header = TRUE, sep = ",")
 # View the first few rows
 head(data)
 # Check the structure and types of each column
@@ -17,5 +17,5 @@ names(data) <- tolower(names(data))
 # Replace spaces with underscores
 names(data) <- gsub(" ", "_", names(data))  
 # Step 8: Save the Cleaned Data
-write.csv(data, "C:\\Users\\Amirtha\\Documents\\Team research and devep\\cleaned_data.csv", row.names = FALSE)
+write.csv(data, "cleaned_data.csv", row.names = FALSE)
 
