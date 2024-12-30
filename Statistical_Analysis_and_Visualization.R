@@ -25,15 +25,12 @@ png("max_wind_speed_histogram plot.png")
 hist(data$max_wind_speed, main= 'Histogram of maximum wind speed', xlab= 'Maximum wind speed', col= 'lightblue', border='black')
 # Close the graphic device to save the plot
 dev.off()
-
-
 # Set the file path where you want to save the plot
 png("max_wind_speed_histogram plot.png")
 #Plot histogram fo Average_Relative_Humidity
 hist(data$avg_relative_humidity, main = "Histogram of Average Relative Humidity", xlab = "Average Relative Humidity", col = "lightblue", border = "black")
 # Close the graphic device to save the plot
 dev.off()
-
 # Plot the histogram with a density curve
 hist(data$avg_relative_humidity, 
      breaks = 10, 
@@ -48,10 +45,8 @@ hist(data$avg_relative_humidity,
 lines(density(data$avg_relative_humidity), 
       col = "red", 
       lwd = 2)  # Line width
-
 # Close the graphic device to save the plot
 dev.off()
-
 # Set the file path where you want to save the plot
 png("avg_relative_humidity plot.png")
 # Plot the histogram with density for avg_relative_humidity
@@ -79,14 +74,10 @@ hist(data$max_wind_speed,
 lines(density(data$max_wind_speed, na.rm = TRUE), col = "red")
 # Close the graphic device to save the plot
 dev.off()
-
-
 install.packages("ggplot2")
 library(ggplot2)
-
 # Fit the linear model for avg_relative_humidity as a function of max_wind_speed
 model <- lm(avg_relative_humidity ~ max_wind_speed, data = data)
-
 # Create the scatter plot with the regression line
 plot <- ggplot(data, aes(x = max_wind_speed, y = avg_relative_humidity)) +
   geom_point(color = "blue") +  # Scatter plot of data points
@@ -95,11 +86,7 @@ plot <- ggplot(data, aes(x = max_wind_speed, y = avg_relative_humidity)) +
   xlab("Max Wind Speed") + 
   ylab("Average Relative Humidity") +
   theme_minimal()
-
 # Save the plot as a PNG file
 ggsave("linear_regression_plot.png", plot = plot, width = 8, height = 6)
-
-
-
 # Pearson's correlation test between avg_relative_humidity and max_wind_speed
 cor.test(data$avg_relative_humidity, data$max_wind_speed, method = "pearson")
