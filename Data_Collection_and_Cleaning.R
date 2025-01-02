@@ -18,4 +18,6 @@ names(data) <- tolower(names(data))
 names(data) <- gsub(" ", "_", names(data))  
 # Step 8: Save the Cleaned Data
 write.csv(data, "cleaned_data.csv", row.names = FALSE)
+#end 
+
 
