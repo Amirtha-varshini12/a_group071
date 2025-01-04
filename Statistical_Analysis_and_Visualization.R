@@ -90,3 +90,4 @@ plot <- ggplot(data, aes(x = max_wind_speed, y = avg_relative_humidity)) +
 ggsave("linear_regression_plot.png", plot = plot, width = 8, height = 6)
 # Pearson's correlation test between avg_relative_humidity and max_wind_speed
 cor.test(data$avg_relative_humidity, data$max_wind_speed, method = "pearson")
+#end
