@@ -16,9 +16,7 @@ data <- data[!duplicated(data), ]
 names(data) <- tolower(names(data)) 
 # Replace spaces with underscores
 names(data) <- gsub(" ", "_", names(data))  
-
 write.csv(data, "cleaned_data.csv", row.names = FALSE)
-
 # Set the file path where you want to save the plot
 png("max_wind_speed_histogram plot.png")
 #Plot histogram fo max_wind_speed
