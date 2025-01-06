@@ -1,0 +1,9 @@
+Pearson's product-moment correlation
+
+data:  data$avg_relative_humidity and data$max_wind_speed
+t = -30.862, df = 26222, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.1988690 -0.1755108
+sample estimates:
+       cor -0.1872164
