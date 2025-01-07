@@ -50,23 +50,24 @@ dev.off()
 install.packages("ggplot2")
 library(ggplot2)
 
-# Fit the linear model for avg_relative_humidity as a function of max_wind_speed
+# Fit the linear model for avg_relative_humidity as a function of max_wind_speed.
 model <- lm(avg_relative_humidity ~ max_wind_speed, data = data)
 
 plot <- ggplot(data, aes(x = max_wind_speed, y = avg_relative_humidity)) +
   geom_point(color = "blue") +  # Scatter plot of data points
-  geom_smooth(method = "lm", formula = y ~ x, color = "red", se = FALSE) +  # Add linear regression line
+  geom_smooth(method = "lm", formula = y ~ x, color = "red", se = FALSE) +  
+  # Add linear regression line
   ggtitle("Max Wind Speed vs Avg Relative Humidity") + 
   xlab("Max Wind Speed") + 
   ylab("Average Relative Humidity") +
   theme_minimal()
 
-# Save the plot as a PNG file
+# Save the plot as a PNG file.
 ggsave("linear_regression_plot.png", plot = plot, width = 8, height = 6)
 
-# Pearson's correlation test between avg_relative_humidity and max_wind_speed
+# Pearson's correlation test between avg_relative_humidity and max_wind_speed.
 cor.test(data$avg_relative_humidity, data$max_wind_speed, method = "pearson")
-
+# end
 
 
 
